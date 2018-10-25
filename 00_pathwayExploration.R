@@ -59,8 +59,9 @@ w = which(int_matrix==1, arr.ind = TRUE)
 
 #Now that I have my pathways, I would like to get my graphs 
 
-my_ids = c(100, 109, 133, 136, 154)
+my_ids = c(100, 109, 133, 136, 154) #do not consider insulin signaling for this 
 my_pathways = x[my_ids]
+names(my_pathways)
 
 my_pw_graphs = lapply(X = my_pathways, FUN = function(i){
   igraph::igraph.from.graphNEL(graphite::pathwayGraph(pathway = i))
